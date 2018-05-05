@@ -60,18 +60,10 @@ class Parser(object):
             widget = Widget()
             widget.name = layerObject.name
             widget.area = layerObject.bbox
-            # widget.area[0] = layerObject.bbox.x1
-            # widget.area[1] = layerObject.bbox.y1
-            # widget.area[2] = layerObject.bbox.x2
-            # widget.area[3] = layerObject.bbox.y2
-            # widget.area = tuple(widget.area)
-            # print widget.area
+
             
             layer_image = layerObject.as_PIL()
             pngname = widget.name + ".png"
-            # pngname.replace(' ', '')
-            # pngname = ''.join(pngname.split())
-            # pngname = pngname.translate(None, "()")
             pngname = re.sub(r"[\(,\),\' ']", '', pngname)
             layer_image.save(pngname)
             pngname = re.sub(r"[\'.png']", '',  pngname)
@@ -81,10 +73,7 @@ class Parser(object):
 
     def parse_group(self, groupObject):
         CurrentWorkDir = os.getcwd()
-        # name = ' '.join(groupObject.name.split())
         dirname = groupObject.name
-        # dirname = ''.join(dirname.split())
-        # dirname = dirname.translate(None, "()")
         dirname = re.sub(r"[\(,\),\' ']", '', dirname)
         os.mkdir(dirname)
         os.chdir(dirname)
