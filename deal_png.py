@@ -18,7 +18,7 @@ print img_src.load()
 
 # 100,100 是像素点的坐标
 # data = src_strlist[1,1]
-# 结果data是一个元组包含这个像素点的颜色信息    栗子：(0, 0, 0, 255)
+# 结果data是一个元组包含这个像素点的颜色信息
 
 
 for i in range(0,img_src.size[0]):
